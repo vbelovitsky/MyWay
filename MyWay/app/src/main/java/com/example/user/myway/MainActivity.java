@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class CustomAdapter extends BaseAdapter{
+        //region Var
         final String[] placeNames = getResources().getStringArray(R.array.place_names_array);
         final int[] placeImages = {
                 R.drawable.baa_historymuseum,
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.bal_tretyakovval
 
         };
+        //endregion
         @Override
         public int getCount() {
             return placeImages.length;
@@ -65,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = getLayoutInflater().inflate(R.layout.main_custom_item, null);
 
-            ImageView placeImage = (ImageView)convertView.findViewById(R.id.item_image);
-            TextView placeName = (TextView)convertView.findViewById(R.id.item_text);
+            ImageView placeImage = convertView.findViewById(R.id.item_image);
+            TextView placeName = convertView.findViewById(R.id.item_text);
 
             placeImage.setImageResource(placeImages[position]);
             placeName.setText(placeNames[position]);

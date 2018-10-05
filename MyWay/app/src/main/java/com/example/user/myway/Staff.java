@@ -4,8 +4,10 @@ import android.app.Application;
 import android.content.Context;
 
 public class Staff extends Application {
-    private Context context;
 
+
+    private Context context;
+    //region Var
     private int [][] staffImages = {
             {       R.drawable.crown,
                     R.drawable.helmet,
@@ -60,6 +62,7 @@ public class Staff extends Application {
 
     private int [] currentImages;
     private String [] currentAnswers;
+//endregion
 
     public Staff(Context current, int position){
         this.context = current;
@@ -71,6 +74,7 @@ public class Staff extends Application {
         return currentImages[position];
     }
     public String getAnswer(int position){return currentAnswers[position];}
+    public int getLength(){ return currentImages.length; }
 
 
 

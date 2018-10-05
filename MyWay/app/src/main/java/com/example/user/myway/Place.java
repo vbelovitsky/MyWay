@@ -5,6 +5,7 @@ import android.content.Context;
 
 public class Place extends Application {
 
+    //region Var
     private Context context;
 
     private String[] webArray;
@@ -33,12 +34,11 @@ public class Place extends Application {
     private String hours = "";
     private String description = "";
     private int image = 0;
-    public Place(Context current){
+    //endregion
+
+    public Place(Context current, int position){
         this.context = current;
 
-    }
-
-    public void setRes(int position){
         webArray = context.getResources().getStringArray(R.array.websrc_array);
         numbersArray = context.getResources().getStringArray(R.array.numbers_array);
         addressesArray = context.getResources().getStringArray(R.array.addresses_array);
@@ -56,22 +56,18 @@ public class Place extends Application {
     public int getImage(){
         return image;
     }
-
     public String getDescription(){
         return description;
     }
     public String getWeb(){
         return web;
     }
-
     public String getNumber(){
         return number;
     }
-
     public String getAddress() {
         return address;
     }
-
     public String getHours() {
         return hours;
     }

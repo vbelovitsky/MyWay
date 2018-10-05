@@ -16,44 +16,29 @@ public class RecommendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommend);
 
         final int getPosition = getIntent().getIntExtra("positionForRecommend",-1);
+        final Recommend currentRecommend = new Recommend(this, getPosition);
 
-        final int[] fImages = {
-            R.drawable.caa_festcafe,
-                R.drawable.cab_mcdac,
-                R.drawable.cac_festcafe,
-                R.drawable.cad_teremok,
-                R.drawable.cae_burgerking,
-                R.drawable.caf_nookcoffee,
-                R.drawable.cag_burgerking,
-                R.drawable.cah_darvincafe,
-                R.drawable.cai_paleomus,
-                R.drawable.caj_burgerking,
-                R.drawable.cak_burgerking,
-                R.drawable.cal_tretiakcafe
-        };
-        final String [] fName = getResources().getStringArray(R.array.cafe_array);
-        final String [] fAddress = getResources().getStringArray(R.array.cafeaddresses_array);
-        final String [] fDesc = getResources().getStringArray(R.array.food_array);
-
+        //region SetCafeInfo
         ImageView foodImage = findViewById(R.id.food_image);
-        foodImage.setImageResource(fImages[getPosition]);
+        foodImage.setImageResource(currentRecommend.getCafeImage());
         TextView foodName = findViewById(R.id.food_name);
-        foodName.setText(fName[getPosition]);
+        foodName.setText(currentRecommend.getCafeName());
         TextView foodAddress = findViewById(R.id.food_address);
-        foodAddress.setText(fAddress[getPosition]);
+        foodAddress.setText(currentRecommend.getCafeAddress());
         TextView foodDesc = findViewById(R.id.food_desc);
-        foodDesc.setText(fDesc[getPosition]);
+        foodDesc.setText(currentRecommend.getCafeDesc());
+        //endregion
 
-        Button btn = findViewById(R.id.go_to_menu);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        //region MoveToMainActivity
+        final Button nextButton = findViewById(R.id.go_to_menu);
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RecommendActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
-
+        //endregion
     }
 
 }
