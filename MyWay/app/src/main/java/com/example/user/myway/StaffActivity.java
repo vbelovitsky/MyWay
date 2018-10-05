@@ -14,8 +14,9 @@ import java.util.Random;
 
 public class StaffActivity extends AppCompatActivity{
     int scoreNum = 0;
-    String rightAnswer;
-    public int positionOfStaff = 0;
+    int positionOfStaff = 0;
+    int temp = 0;
+    String rightAnswer = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,31 +29,53 @@ public class StaffActivity extends AppCompatActivity{
         final ImageView staff = findViewById(R.id.staffImage);
         staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
         final EditText editAnswer = findViewById(R.id.editAnswer);
-        final Button confirm = findViewById(R.id.confirm);
+        final Button previousStaff = findViewById(R.id.previousStaff);
+        final Button confirm = findViewById(R.id.confirmStaff);
+        final Button newStaff = findViewById(R.id.nextStaff);
         final TextView score = findViewById(R.id.score);
         score.setText("0");
         //endregion
 
+        //region ConfirmStaff
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String answer = editAnswer.getText().toString();
-                rightAnswer = currentStaff.getAnswer(positionOfStaff);
-
-                if (answer.equals(rightAnswer)){
-                    scoreNum = scoreNum+1;
-                    String temp = String.valueOf(scoreNum);
-                    score.setText(temp);
+                if (answer.equals(currentStaff.getAnswer(positionOfStaff))){
+                    if (temp==0) {
+                        scoreNum = scoreNum + 1;
+                        score.setText(String.valueOf(scoreNum));
+                        temp=1;
+                    }
                 }
             }
         });
+        //endregion
+
+        //region PreviousStaff
+        previousStaff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                positionOfStaff--;
+                temp=0;
+                if (positionOfStaff<0){
+                    positionOfStaff = currentStaff.getLength()-1;
+                    staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
+                    rightAnswer = currentStaff.getAnswer(positionOfStaff);}
+                else {
+                    staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
+                    rightAnswer = currentStaff.getAnswer(positionOfStaff);
+                }
+            }
+        });
+        //endregion
 
         //region NewStaff
-        final Button newStaff = findViewById(R.id.new_staff);
         newStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 positionOfStaff++;
+                temp=0;
                 if (positionOfStaff<currentStaff.getLength()){
                     staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
                     rightAnswer = currentStaff.getAnswer(positionOfStaff);}
