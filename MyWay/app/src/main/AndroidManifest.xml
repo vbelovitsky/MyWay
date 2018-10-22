@@ -8,17 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:resizeableActivity="false">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlaceActivity" />
-        <activity android:name=".StaffActivity" />
-        <activity android:name=".RecommendActivity" />
+        <activity android:name=".PlaceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StaffActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RecommendActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

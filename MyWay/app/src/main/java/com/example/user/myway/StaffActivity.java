@@ -1,6 +1,7 @@
 package com.example.user.myway;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,21 +10,24 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
 public class StaffActivity extends AppCompatActivity{
     int scoreNum = 0;
     int positionOfStaff = 0;
-    int temp = 0;
     String rightAnswer = "";
-
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff);
         final int getPosition = getIntent().getIntExtra("positionForStaff",-1);
-        final Staff currentStaff = new Staff(this,getPosition);
+        final Staff currentStaff = new Staff(this, getPosition);
+
+        sp = getSharedPreferences("Score", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sp.edit();
 
         //region SetStuffInfo
         final ImageView staff = findViewById(R.id.staffImage);
@@ -32,22 +36,34 @@ public class StaffActivity extends AppCompatActivity{
         final Button previousStaff = findViewById(R.id.previousStaff);
         final Button confirm = findViewById(R.id.confirmStaff);
         final Button newStaff = findViewById(R.id.nextStaff);
+        final Button resetScore = findViewById(R.id.reset_score);
         final TextView score = findViewById(R.id.score);
-        score.setText("0");
+        score.setText(sp.getString("Score"+getPosition,"0"));
+        scoreNum = Integer.parseInt(sp.getString(("Score"+getPosition),"0"));
         //endregion
 
         //region ConfirmStaff
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String answer = editAnswer.getText().toString();
-                if (answer.equals(currentStaff.getAnswer(positionOfStaff))){
-                    if (temp==0) {
+                if (!currentStaff.checkCurrentCompletedAnswer(positionOfStaff)) {
+                    String answer = editAnswer.getText().toString();
+                    if (answer.equals(currentStaff.getAnswer(positionOfStaff))) {
+                        currentStaff.setCurrentCompletedAnswer(positionOfStaff);
                         scoreNum = scoreNum + 1;
                         score.setText(String.valueOf(scoreNum));
-                        temp=1;
+                        editor.putString("Score"+getPosition, String.valueOf(scoreNum));
+                        editor.apply();
+                        Toast.makeText(getApplicationContext(), "Правильно!", Toast.LENGTH_SHORT).show();
                     }
+                    else if (answer.equals(""))
+                        Toast.makeText(getApplicationContext(), "Введите ответ", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getApplicationContext(), "Неверный ответ", Toast.LENGTH_SHORT).show();
                 }
+                else
+                    Toast.makeText(getApplicationContext(), "Уже отгадано", Toast.LENGTH_SHORT).show();
+
             }
         });
         //endregion
@@ -57,7 +73,6 @@ public class StaffActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 positionOfStaff--;
-                temp=0;
                 if (positionOfStaff<0){
                     positionOfStaff = currentStaff.getLength()-1;
                     staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
@@ -75,7 +90,6 @@ public class StaffActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 positionOfStaff++;
-                temp=0;
                 if (positionOfStaff<currentStaff.getLength()){
                     staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
                     rightAnswer = currentStaff.getAnswer(positionOfStaff);}
@@ -84,6 +98,7 @@ public class StaffActivity extends AppCompatActivity{
                     staff.setImageResource(currentStaff.getStaffImage(positionOfStaff));
                     rightAnswer = currentStaff.getAnswer(positionOfStaff);
                 }
+
             }
         });
         //endregion
@@ -99,7 +114,21 @@ public class StaffActivity extends AppCompatActivity{
             }
         });
         //endregion
+
+        //region ResetScore
+        resetScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scoreNum=0;
+                editor.putString("Score"+getPosition, "0");
+                editor.apply();
+                score.setText(sp.getString("Score"+getPosition,"0"));
+                currentStaff.resetCurrentCompletedAnswers();
+            }
+        });
+        //endregion
     }
+
 
 }
 
