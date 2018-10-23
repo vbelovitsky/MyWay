@@ -49,8 +49,8 @@ public class StaffActivity extends AppCompatActivity{
                 if (!currentStaff.checkCurrentCompletedAnswer(positionOfStaff)) {
                     String answer = editAnswer.getText().toString();
                     if (answer.equals(currentStaff.getAnswer(positionOfStaff))) {
-                        currentStaff.setCurrentCompletedAnswer(positionOfStaff);
                         scoreNum = scoreNum + 1;
+                        currentStaff.setCurrentCompletedAnswer(positionOfStaff, scoreNum);
                         score.setText(String.valueOf(scoreNum));
                         editor.putString("Score"+getPosition, String.valueOf(scoreNum));
                         editor.apply();

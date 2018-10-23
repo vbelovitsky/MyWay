@@ -77,14 +77,20 @@ public class Staff extends Application {
         currentImages = staffImages[position];
         currentAnswers = answersArray[position];
     }
+    public Staff(){
 
+    }
+    public int getStaffImagesArrayLength(int position){
+        return staffImages[position].length;
+    }
 
     public int getStaffImage(int position){return currentImages[position];}
     public String getAnswer(int position){return currentAnswers[position];}
     public int getLength(){return currentImages.length;}
 
-    public void setCurrentCompletedAnswer(int pos){
+    public void setCurrentCompletedAnswer(int pos, int score){
         editorAnswers.putString("SavedAnswer"+pos, "YES");
+        editorAnswers.putString("SavedScore", String.valueOf(score));
         editorAnswers.apply();
     }
 
@@ -96,6 +102,7 @@ public class Staff extends Application {
     public void resetCurrentCompletedAnswers(){
         for (int pos = 0; pos<currentAnswers.length; pos++)
             editorAnswers.putString("SavedAnswer"+pos, "NO");
+        editorAnswers.putString("SavedScore", "0");
         editorAnswers.apply();
     }
 

@@ -1,6 +1,8 @@
 package com.example.user.myway;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ListView listOfPlaces = (ListView)findViewById(R.id.list_of_places);
-        CustomAdapter customAdapter = new CustomAdapter();
+        CustomAdapter customAdapter = new CustomAdapter(this);
         listOfPlaces.setAdapter(customAdapter);
 
         listOfPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -30,12 +32,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentPlace);
             }
         });
+
     }
 
     class CustomAdapter extends BaseAdapter{
+
         //region Var
-        final String[] placeNames = getResources().getStringArray(R.array.place_names_array);
-        final int[] placeImages = {
+        private Staff staff = new Staff();
+        private SharedPreferences spscores;
+        private String[] placeNames = getResources().getStringArray(R.array.place_names_array);
+        private String[]placeScores = new String[placeNames.length];
+        private int[] placeImages = {
                 R.drawable.baa_historymuseum,
                 R.drawable.bab_tretyakovgallery,
                 R.drawable.bac_kremlin,
@@ -50,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.bal_tretyakovval
 
         };
+        CustomAdapter(Context context){
+            for (int i = 0; i<placeNames.length; i++) {
+                spscores = context.getSharedPreferences("SavedAnswers" + i, MODE_PRIVATE);
+                placeScores[i] = spscores.getString("SavedScore", "0");
+            }
+        }
         //endregion
         @Override
         public int getCount() {
@@ -69,9 +82,11 @@ public class MainActivity extends AppCompatActivity {
 
             ImageView placeImage = convertView.findViewById(R.id.item_image);
             TextView placeName = convertView.findViewById(R.id.item_text);
+            TextView placeScore = convertView.findViewById(R.id.item_scores);
 
             placeImage.setImageResource(placeImages[position]);
             placeName.setText(placeNames[position]);
+            placeScore.setText(placeScores[position]+"/"+String.valueOf(staff.getStaffImagesArrayLength(position)));
 
             return convertView;
         }
