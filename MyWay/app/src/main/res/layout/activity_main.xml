@@ -6,18 +6,75 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:background="@color/colorWhite">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="10"
-        android:text="@string/title_of_app"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:gravity="center" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/list_of_places"/>
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/options"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/options"
+            android:layout_margin="3dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:text="@string/title_of_app"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/progress"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:gravity="center"
+            android:background="@drawable/star"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list_of_places"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/museums"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:shadowColor="@color/colorBlack"
+                android:text="@string/museums"/>
+            <Button
+                android:id="@+id/parks"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:shadowColor="@color/colorBlack"
+                android:text="@string/parks"/>
+            <Button
+                android:id="@+id/theatres"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:shadowColor="@color/colorBlack"
+                android:text="@string/theatres"/>
+
+        </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

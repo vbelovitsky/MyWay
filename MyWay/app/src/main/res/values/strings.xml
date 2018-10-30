@@ -175,6 +175,8 @@
     <string name="eat">Перекуси!</string>
     <string name="try_it">Продолжи путь!</string>
     <string name="answer">Ответить</string>
-
+    <string name="museums">Музеи</string>
+    <string name="parks">Парки</string>
+    <string name="theatres">Театры</string>
 
 </resources>

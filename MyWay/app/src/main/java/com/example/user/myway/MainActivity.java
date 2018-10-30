@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,9 +27,14 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         setContentView(R.layout.activity_main);
 
-        final ListView listOfPlaces = (ListView)findViewById(R.id.list_of_places);
+        final Button optionsButton = findViewById(R.id.options);
+
+        final ListView listOfPlaces = findViewById(R.id.list_of_places);
         CustomAdapter customAdapter = new CustomAdapter(this);
         listOfPlaces.setAdapter(customAdapter);
+
+        final TextView progress = findViewById(R.id.progress);
+        progress.setText(customAdapter.progressCount(this));
 
         listOfPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -38,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentPlace);
             }
         });
+
     }
 
+
+    //region MuseumsAdapter
     class CustomAdapter extends BaseAdapter{
 
         //region Var
@@ -62,12 +71,23 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.bal_tretyakovval
 
         };
+
         CustomAdapter(Context context){
             for (int i = 0; i<placeNames.length; i++) {
                 spscores = context.getSharedPreferences("SavedAnswers" + i, MODE_PRIVATE);
                 placeScores[i] = spscores.getString("SavedScore", "0");
             }
         }
+
+        public String progressCount(Context context){
+            int progressSum = 0;
+            for (int i = 0; i<placeNames.length; i++) {
+                spscores = context.getSharedPreferences("SavedAnswers" + i, MODE_PRIVATE);
+                progressSum += Integer.parseInt(spscores.getString("SavedScore", "0"));
+            }
+            return String.valueOf(progressSum);
+        }
+
         //endregion
         @Override
         public int getCount() {
@@ -96,5 +116,6 @@ public class MainActivity extends AppCompatActivity {
             return convertView;
         }
     }
+    //endregion
 
 }
