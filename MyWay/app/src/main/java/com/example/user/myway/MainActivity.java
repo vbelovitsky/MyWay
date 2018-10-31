@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         });
         //endregion
 
+
         final ListView listOfPlaces = findViewById(R.id.list_of_places);
-        CustomAdapter customAdapter = new CustomAdapter(this);
+        final CustomAdapter customAdapter = new CustomAdapter(this);
         listOfPlaces.setAdapter(customAdapter);
 
         final TextView progress = findViewById(R.id.progress);
@@ -54,8 +55,86 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //region MuseumsButton
+        Button museumsButton = findViewById(R.id.museums);
+        museumsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listOfPlaces.setAdapter(customAdapter);
+            }
+        });
+        //endregion
+
+        //region ParksButton
+        Button parksButton = findViewById(R.id.parks);
+        parksButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParksAdapter parksAdapter = new ParksAdapter();
+                listOfPlaces.setAdapter(parksAdapter);
+            }
+        });
+        //endregion
+
+        Button theatresButton = findViewById(R.id.theatres);
+        theatresButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TheatresAdapter theatresAdapter = new TheatresAdapter();
+                listOfPlaces.setAdapter(theatresAdapter);
+            }
+        });
+
     }
 
+
+    class TheatresAdapter extends BaseAdapter{
+        private String[] theatresNames = getResources().getStringArray(R.array.theatres_name_array);
+        @Override
+        public int getCount() {return theatresNames.length;}
+
+        @Override
+        public Object getItem(int position) {return null;}
+
+        @Override
+        public long getItemId(int position) {return 0;}
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = getLayoutInflater().inflate(R.layout.theatres_custom_item, null);
+            TextView theatreName = convertView.findViewById(R.id.theatre_item_text);
+            ImageView theatreImage = convertView.findViewById(R.id.theatre_item_image);
+
+            theatreName.setText(theatresNames[position]);
+            return convertView;
+        }
+    }
+
+    //region ParksAdapter
+    class ParksAdapter extends  BaseAdapter{
+
+        private  String[] parksNames = getResources().getStringArray(R.array.parks_names_array);
+
+        @Override
+        public int getCount() {return parksNames.length;}
+
+        @Override
+        public Object getItem(int position) {return null;}
+
+        @Override
+        public long getItemId(int position) {return 0;}
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = getLayoutInflater().inflate(R.layout.parks_custom_item, null);
+            TextView parkName = convertView.findViewById(R.id.park_item_text);
+            ImageView parkImage = convertView.findViewById(R.id.park_item_image);
+
+            parkName.setText(parksNames[position]);
+            return convertView;
+        }
+    }
+    //endregion
 
     //region MuseumsAdapter
     class CustomAdapter extends BaseAdapter{
@@ -64,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         private Staff staff = new Staff();
         private SharedPreferences spscores;
         private String[] placeNames = getResources().getStringArray(R.array.place_names_array);
-        private String[]placeScores = new String[placeNames.length];
+        private String[] placeScores = new String[placeNames.length];
         private int[] placeImages = {
                 R.drawable.baa_historymuseum,
                 R.drawable.bab_tretyakovgallery,
@@ -99,17 +178,11 @@ public class MainActivity extends AppCompatActivity {
 
         //endregion
         @Override
-        public int getCount() {
-            return placeImages.length;
-        }
+        public int getCount() {return placeImages.length;}
         @Override
-        public Object getItem(int position) {
-            return null;
-        }
+        public Object getItem(int position) {return null;}
         @Override
-        public long getItemId(int position) {
-            return 0;
-        }
+        public long getItemId(int position) {return 0;}
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = getLayoutInflater().inflate(R.layout.main_custom_item, null);

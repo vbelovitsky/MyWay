@@ -5,40 +5,26 @@
     android:background="@color/colorWhite">
 
     <ImageView
-        android:id="@+id/item_image"
+        android:id="@+id/theatre_item_image"
         android:layout_width="100dp"
         android:layout_height="90dp"
         android:layout_margin="10dp"
         android:scaleType="centerCrop"/>
 
     <TextView
-        android:id="@+id/item_text"
+        android:id="@+id/theatre_item_text"
         android:layout_width="270dp"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/item_image"
+        android:layout_toEndOf="@+id/theatre_item_image"
         android:gravity="center"
         android:padding="2dp"
         android:textAppearance="?android:textAppearanceMedium"
-        android:background="@color/colorLightestBlue"/>
-
-    <TextView
-        android:id="@+id/item_scores"
-        android:layout_width="270dp"
-        android:layout_height="20dp"
-        android:layout_alignBottom="@+id/item_image"
-        android:layout_alignStart="@+id/item_text"
-        android:layout_marginEnd="10dp"
-        android:layout_toEndOf="@id/item_image"
-        android:textSize="12dp"
-        android:background="@color/colorLightBlue"
-        android:gravity="start"
-        android:textStyle="bold"
-        android:paddingStart="3dp"/>
+        android:background="@color/colorLightestOrange"/>
 
 </RelativeLayout>

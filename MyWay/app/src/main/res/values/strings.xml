@@ -162,6 +162,26 @@
     </string-array>
 
 
+    <string-array name="parks_names_array">
+        <item>Парк горького</item>
+        <item>Сокольники</item>
+        <item>Зарядье</item>
+        <item>Царицыно</item>
+        <item>Музеон</item>
+        <item>Измайлово</item>
+    </string-array>
+
+    <string-array name="theatres_name_array">
+        <item>Большой театр</item>
+        <item>Театр на Страстном</item>
+        <item>Гоголь-центр</item>
+        <item>Театр на Таганке</item>
+        <item>Сац детский театр</item>
+        <item>Современник</item>
+    </string-array>
+
+
+
     <string name="title_of_app">Путешествуй с MyWay!</string>
     <string name="description">Описание места: </string>
     <string name="websrc">Сайт: </string>
