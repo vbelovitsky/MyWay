@@ -162,7 +162,6 @@
     </string-array>
 
 
-
     <string name="title_of_app">Путешествуй с MyWay!</string>
     <string name="description">Описание места: </string>
     <string name="websrc">Сайт: </string>
@@ -178,5 +177,8 @@
     <string name="museums">Музеи</string>
     <string name="parks">Парки</string>
     <string name="theatres">Театры</string>
+    <string name="back">Назад</string>
+    <string name="next">Вперед</string>
+    <string name="delete">Сбросить прогресс</string>
 
 </resources>

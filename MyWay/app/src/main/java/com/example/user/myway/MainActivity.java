@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -27,7 +26,16 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         setContentView(R.layout.activity_main);
 
+        //region OptionsButton
         final Button optionsButton = findViewById(R.id.options);
+        optionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent optionsIntent = new Intent(MainActivity.this, Options.class);
+                startActivity(optionsIntent);
+            }
+        });
+        //endregion
 
         final ListView listOfPlaces = findViewById(R.id.list_of_places);
         CustomAdapter customAdapter = new CustomAdapter(this);
@@ -36,11 +44,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView progress = findViewById(R.id.progress);
         progress.setText(customAdapter.progressCount(this));
 
+
         listOfPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id){
-                Intent intentPlace = new Intent(MainActivity.this,PlaceActivity.class);
-                intentPlace.putExtra("positionForPlace",position);
+            public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
+                Intent intentPlace = new Intent(MainActivity.this, PlaceActivity.class);
+                intentPlace.putExtra("positionForPlace", position);
                 startActivity(intentPlace);
             }
         });
