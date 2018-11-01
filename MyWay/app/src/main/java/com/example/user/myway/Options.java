@@ -39,4 +39,16 @@ public class Options extends AppCompatActivity {
         });
         //endregion
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.gc();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.gc();
+    }
 }

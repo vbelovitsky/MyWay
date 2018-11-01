@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PlaceActivity extends AppCompatActivity {
 
@@ -29,6 +31,9 @@ public class PlaceActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.address)).setText(currentPlace.getAddress());
         ((TextView)findViewById(R.id.number)).setText(currentPlace.getNumber());
         ((TextView)findViewById(R.id.hours)).setText(currentPlace.getHours());
+        final CheckBox cb1 = findViewById(R.id.cb_1);
+        final CheckBox cb2 = findViewById(R.id.cb_2);
+        final CheckBox cb3 = findViewById(R.id.cb_3);
         //endregion
 
         //region BackButton
@@ -48,7 +53,10 @@ public class PlaceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentStaff = new Intent(PlaceActivity.this, StaffActivity.class);
                 intentStaff.putExtra("positionForStaff",getPosition);
-                startActivity(intentStaff);
+                if (cb1.isChecked()&cb2.isChecked()&cb3.isChecked())
+                    startActivity(intentStaff);
+                else
+                    Toast.makeText(getApplicationContext(), "Вы что-то забыли :)", Toast.LENGTH_SHORT).show();
             }
         });
         //endregion
