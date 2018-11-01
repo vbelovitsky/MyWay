@@ -21,10 +21,7 @@ public class Information extends AppCompatActivity {
         infoBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Information.this, StaffActivity.class);
-                intent.putExtra("positionFromInfo", getInfoPosition);
-                intent.putExtra("positionForStaff", getInfoPlacePosition);
-                startActivity(intent);
+                Information.this.finish();
             }
         });
         //endregion

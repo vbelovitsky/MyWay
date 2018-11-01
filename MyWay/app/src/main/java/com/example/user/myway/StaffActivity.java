@@ -135,14 +135,12 @@ public class StaffActivity extends AppCompatActivity{
         });
         //endregion
 
-        //region MoveToPlaceActivity
+        //region BackButton
         Button backToPlaceButton = findViewById(R.id.back_button_1);
         backToPlaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StaffActivity.this, PlaceActivity.class);
-                intent.putExtra("positionForPlace", getPosition);
-                startActivity(intent);
+                StaffActivity.this.finish();
             }
         });
         //endregion

@@ -19,8 +19,7 @@ public class Options extends AppCompatActivity {
         backFromOptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentForMainActivity = new Intent(Options.this, MainActivity.class);
-                startActivity(intentForMainActivity);
+                Options.this.finish();
             }
         });
         //endregion

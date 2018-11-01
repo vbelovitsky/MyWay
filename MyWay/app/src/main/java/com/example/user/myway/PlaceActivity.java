@@ -19,6 +19,8 @@ public class PlaceActivity extends AppCompatActivity {
         final int getPosition = getIntent().getIntExtra("positionForPlace",-1);
         final Place currentPlace = new Place(this,getPosition);
 
+
+
         //region SetPlaceInfo
         ImageView placeImage = findViewById(R.id.place_image);
         placeImage.setImageResource(currentPlace.getImage());
@@ -34,8 +36,7 @@ public class PlaceActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backIntent = new Intent(PlaceActivity.this, MainActivity.class);
-                startActivity(backIntent);
+                PlaceActivity.this.finish();
             }
         });
         //endregion

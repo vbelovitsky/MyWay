@@ -39,8 +39,7 @@ public class TheatreActivity extends AppCompatActivity {
         theatreBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backFromTheatre = new Intent(TheatreActivity.this, MainActivity.class);
-                startActivity(backFromTheatre);
+                TheatreActivity.this.finish();
             }
         });
         //endregion

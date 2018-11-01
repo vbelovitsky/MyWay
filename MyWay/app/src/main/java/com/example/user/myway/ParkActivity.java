@@ -38,8 +38,7 @@ public class ParkActivity extends AppCompatActivity {
         parkBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backFromPark = new Intent(ParkActivity.this, MainActivity.class);
-                startActivity(backFromPark);
+                ParkActivity.this.finish();
             }
         });
         //endregion
