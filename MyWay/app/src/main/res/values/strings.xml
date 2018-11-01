@@ -166,20 +166,47 @@
         <item>Парк горького</item>
         <item>Сокольники</item>
         <item>Зарядье</item>
+        <item>Измайловский парк</item>
         <item>Царицыно</item>
-        <item>Музеон</item>
-        <item>Измайлово</item>
+        <item>Сад им. Баумана</item>
+        <item>Красная Пресня</item>
+        <item>Cад Эрмитаж</item>
+        <item>Парк Кусково</item>
+    </string-array>
+    <string-array name="parks_web_array">
+        <item>https://park-gorkogo.com</item>
+        <item>http://park.sokolniki.com</item>
+        <item>https://www.zaryadyepark.ru</item>
+        <item>http://www.izmailovsky-park.ru</item>
+        <item>http://tsaritsyno-museum.ru/park/</item>
+        <item>http://sadbaumana.ru</item>
+        <item>http://p-kp.ru</item>
+        <item>http://www.mosgorsad.ru</item>
+        <item>http://kuskovo.ru</item>
     </string-array>
 
     <string-array name="theatres_name_array">
-        <item>Большой театр</item>
         <item>Театр на Страстном</item>
         <item>Гоголь-центр</item>
         <item>Театр на Таганке</item>
         <item>Сац детский театр</item>
         <item>Современник</item>
+        <item>Малый театр</item>
+        <item>Ленком</item>
+        <item>Театр на Покровке</item>
+        <item>Цирк на Вернадского</item>
     </string-array>
-
+    <string-array name="theatres_web_array">
+        <item>http://nastrastnom.ru/#events</item>
+        <item>https://gogolcenter.com/events/playbill</item>
+        <item>http://tagankateatr.ru/afisha</item>
+        <item>http://teatr-sats.ru/afisha</item>
+        <item>https://sovremennik.com.ru/poster/</item>
+        <item>https://maly.su/poster/</item>
+        <item>https://lenkom.ru/afisha</item>
+        <item>http://www.napokrovke.ru/index.php/afisha</item>
+        <item>https://www.greatcircus.ru</item>
+    </string-array>
 
 
     <string name="title_of_app">Путешествуй с MyWay!</string>
@@ -198,7 +225,9 @@
     <string name="parks">Парки</string>
     <string name="theatres">Театры</string>
     <string name="back">Назад</string>
-    <string name="next">Вперед</string>
+    <string name="next">Далее</string>
     <string name="delete">Сбросить прогресс</string>
+    <string name="minidelete">Очистить</string>
+    <string name="infotitle">Информация</string>
 
 </resources>

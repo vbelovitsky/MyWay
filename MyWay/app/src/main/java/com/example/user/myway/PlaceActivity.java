@@ -29,6 +29,17 @@ public class PlaceActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.hours)).setText(currentPlace.getHours());
         //endregion
 
+        //region BackButton
+        Button backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent backIntent = new Intent(PlaceActivity.this, MainActivity.class);
+                startActivity(backIntent);
+            }
+        });
+        //endregion
+
         //region MoveToStaffActivity
         Button nextButton = findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -42,4 +53,16 @@ public class PlaceActivity extends AppCompatActivity {
         //endregion
 
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.gc();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.gc();
+    }
+
 }
