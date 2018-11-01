@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class PlaceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_place);
 
         final int getPosition = getIntent().getIntExtra("positionForPlace",-1);
+        final int getRecommendedParkPosition = getIntent().getIntExtra("positionForRecommendedPark",-1);
         final Place currentPlace = new Place(this,getPosition);
 
 
@@ -31,9 +33,12 @@ public class PlaceActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.address)).setText(currentPlace.getAddress());
         ((TextView)findViewById(R.id.number)).setText(currentPlace.getNumber());
         ((TextView)findViewById(R.id.hours)).setText(currentPlace.getHours());
+        ((TextView)findViewById(R.id.tickets)).setText(currentPlace.getTicket());
+        final ScrollView sc = findViewById(R.id.sc);
         final CheckBox cb1 = findViewById(R.id.cb_1);
         final CheckBox cb2 = findViewById(R.id.cb_2);
         final CheckBox cb3 = findViewById(R.id.cb_3);
+        final CheckBox cb4 = findViewById(R.id.cb_4);
         //endregion
 
         //region BackButton
@@ -53,7 +58,14 @@ public class PlaceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentStaff = new Intent(PlaceActivity.this, StaffActivity.class);
                 intentStaff.putExtra("positionForStaff",getPosition);
-                if (cb1.isChecked()&cb2.isChecked()&cb3.isChecked())
+                intentStaff.putExtra("positionForRecommendedPark", getRecommendedParkPosition);
+                sc.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        sc.fullScroll(sc.FOCUS_DOWN);
+                    }
+                });
+                if (cb1.isChecked()&cb2.isChecked()&cb3.isChecked()&cb4.isChecked())
                     startActivity(intentStaff);
                 else
                     Toast.makeText(getApplicationContext(), "Вы что-то забыли :)", Toast.LENGTH_SHORT).show();

@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //endregion
 
+        final int[]recommendedParks = {2,0,2,0,7,6,0,8,4,6,6,0,5};
 
         final ListView listOfPlaces = findViewById(R.id.list_of_places);
         final CustomAdapter customAdapter = new CustomAdapter(this);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
                 Intent intentPlace = new Intent(MainActivity.this, PlaceActivity.class);
                 intentPlace.putExtra("positionForPlace", position);
+                intentPlace.putExtra("positionForRecommendedPark", recommendedParks[position]);
                 startActivity(intentPlace);
             }
         });
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
                         Intent intentPlace = new Intent(MainActivity.this, PlaceActivity.class);
                         intentPlace.putExtra("positionForPlace", position);
+                        intentPlace.putExtra("positionForRecommendedPark", recommendedParks[position]);
                         startActivity(intentPlace);
                     }
                 });
@@ -252,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
+        System.gc();
     }
 
     @Override

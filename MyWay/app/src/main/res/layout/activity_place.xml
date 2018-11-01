@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <ScrollView
+        android:id="@+id/sc"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
@@ -74,6 +75,15 @@
                 android:padding="10dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/zbourder"/>
+            <TextView
+                android:id="@+id/tickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:text="@string/ticket"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/zbourder"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,6 +116,23 @@
                         android:layout_weight="1"/>
                 </LinearLayout>
                 <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:text="Проездной"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+                <CheckBox
+                    android:id="@+id/cb_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -114,10 +141,10 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:text="Проездной"
+                        android:text="Ключ"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
                     <CheckBox
-                        android:id="@+id/cb_2"
+                        android:id="@+id/cb_3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"/>
@@ -134,7 +161,7 @@
                         android:text="Паспорт"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
                     <CheckBox
-                        android:id="@+id/cb_3"
+                        android:id="@+id/cb_4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"/>

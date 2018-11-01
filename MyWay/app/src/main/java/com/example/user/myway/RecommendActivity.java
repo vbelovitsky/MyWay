@@ -1,6 +1,7 @@
 package com.example.user.myway;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,10 @@ public class RecommendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommend);
 
         final int getPosition = getIntent().getIntExtra("positionForRecommend",-1);
+        final int getRecommendedParkPosition = getIntent().getIntExtra("positionForRecommendedPark", -1);
         final Recommend currentRecommend = new Recommend(this, getPosition);
+        final Park currentpark = new Park(this, getRecommendedParkPosition);
+
 
         //region SetCafeInfo
         ImageView foodImage = findViewById(R.id.food_image);
@@ -28,6 +32,14 @@ public class RecommendActivity extends AppCompatActivity {
         TextView foodDesc = findViewById(R.id.food_desc);
         foodDesc.setText(currentRecommend.getCafeDesc());
         //endregion
+
+        ImageView recoMapImage = findViewById(R.id.minimap);
+        recoMapImage.setImageResource(currentRecommend.getMapImage());
+        ImageView recoParkImage = findViewById(R.id.reco_park_image);
+        recoParkImage.setImageResource(currentpark.getParkImage());
+        ((TextView)findViewById(R.id.reco_park_desc)).setText(currentpark.getParkDesc());
+        ((TextView)findViewById(R.id.reco_park_web)).setText(currentpark.getParkWeb());
+        ((TextView)findViewById(R.id.reco_park_address)).setText(currentpark.getParkAddress());
 
         //region MoveToMainActivity
         final Button nextButton = findViewById(R.id.go_to_menu);

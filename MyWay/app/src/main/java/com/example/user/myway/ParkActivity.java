@@ -16,22 +16,13 @@ public class ParkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_park);
 
         final int getParkPosition = getIntent().getIntExtra("positionForPark", 0);
-        final String[] parksWeb = getResources().getStringArray(R.array.parks_web_array);
-        final int[] parksImages = {
-                R.drawable.par_a,
-                R.drawable.par_b,
-                R.drawable.par_c,
-                R.drawable.par_d,
-                R.drawable.par_e,
-                R.drawable.par_f,
-                R.drawable.par_g,
-                R.drawable.par_h,
-                R.drawable.par_i,
-        };
+
+        Park park = new Park(this, getParkPosition);
 
         ImageView parkImage = findViewById(R.id.park_image);
-        parkImage.setImageResource(parksImages[getParkPosition]);
-        ((TextView)findViewById(R.id.park_websrc)).setText(parksWeb[getParkPosition]);
+        parkImage.setImageResource(park.getParkImage());
+        ((TextView)findViewById(R.id.park_websrc)).setText(park.getParkWeb());
+        ((TextView)findViewById(R.id.park_address)).setText(park.getParkAddress());
 
         //region BackButton
         Button parkBackButton = findViewById(R.id.park_back_button);

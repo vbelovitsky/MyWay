@@ -12,25 +12,49 @@
         android:layout_weight="1"
         android:text="Настройки"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:gravity="center"/>
+        android:gravity="center"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9">
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:background="@color/colorLightGray">
+
         <Button
             android:id="@+id/deleteAll"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@color/colorDarkRed"
-            android:text="@string/delete"
+            android:layout_height="0dp"
             android:layout_margin="10dp"
-            android:padding="10dp" />
+            android:layout_weight="1"
+            android:background="@color/colorDarkRed"
+            android:padding="10dp"
+            android:text="@string/delete" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:autoLink="web"
+            android:background="@drawable/zbourder"
+            android:gravity="end"
+            android:padding="5dp"
+            android:textColor="@color/colorBlack"
+            android:text="Контакты разработчика:\nvk.com/kratos797\nПри Лицее НИУ ВШЭ\n2018 г."
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorLightGray">
         <Button
             android:id="@+id/backFromOptions"
             android:layout_width="0dp"

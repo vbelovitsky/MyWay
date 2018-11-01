@@ -13,6 +13,7 @@ public class Place extends Application {
     private String[] addressesArray;
     private String[] hoursArray;
     private String[] descriptionsArray;
+    private String[] ticketsArray;
     private int[] imagesArray =
                    {R.drawable.aaa_historymuseum,
                     R.drawable.aab_tretyakovgallery,
@@ -33,6 +34,7 @@ public class Place extends Application {
     private String address = "";
     private String hours = "";
     private String description = "";
+    private String ticket = "";
     private int image = 0;
     //endregion
 
@@ -44,12 +46,14 @@ public class Place extends Application {
         addressesArray = context.getResources().getStringArray(R.array.addresses_array);
         hoursArray = context.getResources().getStringArray(R.array.hours_array);
         descriptionsArray = context.getResources().getStringArray(R.array.descriptions_array);
+        ticketsArray = context.getResources().getStringArray(R.array.tickets_array);
 
         image = imagesArray[position];
         web = webArray[position];
         address = addressesArray[position];
         number = numbersArray[position];
         hours = hoursArray[position];
+        ticket = ticketsArray[position];
         description = descriptionsArray[position];
     }
 
@@ -71,4 +75,5 @@ public class Place extends Application {
     public String getHours() {
         return hours;
     }
+    public String getTicket(){return ticket;}
 }

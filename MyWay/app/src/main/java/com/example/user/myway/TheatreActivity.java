@@ -17,6 +17,8 @@ public class TheatreActivity extends AppCompatActivity {
 
         final int getTheatrePosition = getIntent().getIntExtra("positionForTheatre", 0);
         final String[] theatresWeb = getResources().getStringArray(R.array.theatres_web_array);
+        final String[] theatresAddresses = getResources().getStringArray(R.array.theatres_addresses_array);
+        final String[] theatresDesc = getResources().getStringArray(R.array.theatres_descriptions_array);
         final int[] theatresImages = {
                 R.drawable.the_a,
                 R.drawable.the_b,
@@ -32,7 +34,7 @@ public class TheatreActivity extends AppCompatActivity {
         ImageView theatreImage = findViewById(R.id.theatre_image);
         theatreImage.setImageResource(theatresImages[getTheatrePosition]);
         ((TextView)findViewById(R.id.theatre_websrc)).setText(theatresWeb[getTheatrePosition]);
-
+        ((TextView)findViewById(R.id.theatre_address)).setText(theatresAddresses[getTheatrePosition]);
 
         //region BackButton
         Button theatreBackButton = findViewById(R.id.theatre_back_button);

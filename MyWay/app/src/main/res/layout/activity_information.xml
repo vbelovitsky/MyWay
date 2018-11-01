@@ -22,7 +22,11 @@
         android:layout_height="0dp"
         android:layout_weight="8"
         android:background="@color/colorWhite"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:padding="10dp"
+        android:text="1. Найдите экспонат, изображенный на картинке.\n2. Рядом находится этикетка, описывающая этот экспонат.\n3. Впишите фамилию автора (если есть, инициалы писать не нужно) и название экспоната заглавными буквами, каждое слово через пробел.\n4. Пример:\nВРУБЕЛЬ СИРЕНЬ"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

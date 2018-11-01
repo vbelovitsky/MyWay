@@ -25,6 +25,7 @@ public class StaffActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff);
         final int getPosition = getIntent().getIntExtra("positionForStaff",-1);
+        final int getRecommendedParkPosition = getIntent().getIntExtra("positionForRecommendedPark", -1);
         positionOfStaff = getIntent().getIntExtra("positionFromInfo", 0);
         final Staff currentStaff = new Staff(this, getPosition);
 
@@ -152,6 +153,7 @@ public class StaffActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intentRecommend = new Intent(StaffActivity.this, RecommendActivity.class);
                 intentRecommend.putExtra("positionForRecommend",getPosition);
+                intentRecommend.putExtra("positionForRecommendedPark",getRecommendedParkPosition);
                 startActivity(intentRecommend);
             }
         });
