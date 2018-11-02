@@ -68,7 +68,7 @@ public class PlaceActivity extends AppCompatActivity {
                 if (cb1.isChecked()&cb2.isChecked()&cb3.isChecked()&cb4.isChecked())
                     startActivity(intentStaff);
                 else
-                    Toast.makeText(getApplicationContext(), "Вы что-то забыли :)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Вы что-то забыли!", Toast.LENGTH_SHORT).show();
             }
         });
         //endregion

@@ -169,6 +169,15 @@
 
             </LinearLayout>
             <TextView
+                android:id="@+id/tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:text="Что делать?\n1) Добраться до достопримечательности\n2) Найти вход\n3) Купить билет\n4) Осматривать достопримечательность, фотографируя понравившиеся экспонаты\n5) Получать удовольствие :)"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/zbourder"/>
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="\n \n"/>
