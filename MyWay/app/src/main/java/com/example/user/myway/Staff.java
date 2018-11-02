@@ -88,7 +88,18 @@ public class Staff extends Application {
                     R.drawable.pus_u,
                     R.drawable.pus_v,},
             //endregion
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
+            //region gmv
+            {R.drawable.gmv_a,
+                    R.drawable.gmv_b,
+                    R.drawable.sword,
+                    R.drawable.trophy,
+                    R.drawable.gmv_e,
+                    R.drawable.gmv_f,
+                    R.drawable.gmv_g,
+                    R.drawable.gmv_h,
+                    R.drawable.gmv_i,
+                    R.drawable.gmv_j,},
+            //endregion
             //region rus
             {R.drawable.rus_a,
                     R.drawable.rus_b,
@@ -103,10 +114,40 @@ public class Staff extends Application {
                     R.drawable.rus_k,
                     R.drawable.rus_l,},
             //endregion
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
+            //region fer
+            {R.drawable.fer_a,
+                    R.drawable.fer_b,
+                    R.drawable.fer_c,
+                    R.drawable.fer_d,
+                    R.drawable.fer_e,
+                    R.drawable.fer_f,
+                    R.drawable.fer_g,
+                    R.drawable.fer_h,
+                    R.drawable.fer_i,
+                    R.drawable.fer_j,},
+            //endregion
+            //region dar
+            {R.drawable.dar_a,
+                    R.drawable.dar_b,
+                    R.drawable.dar_c,
+                    R.drawable.dar_d,
+                    R.drawable.dar_e,
+                    R.drawable.dar_f,},
+            //endregion
+            //region pal
+            {R.drawable.pal_a,
+                    R.drawable.pal_b,
+                    R.drawable.pal_c,
+                    R.drawable.pal_d,
+                    R.drawable.pal_e,
+                    R.drawable.pal_f,},
+            //endregion
+            //region pla
+            {R.drawable.pla_a,
+                    R.drawable.pla_b,
+                    R.drawable.pla_c,
+                    R.drawable.pla_d,},
+            //endregion
             //region zoo
             {R.drawable.zoo_a,
                     R.drawable.zoo_b,
@@ -212,7 +253,18 @@ public class Staff extends Application {
                     "ЖАН-БАТИСТ МОННУАЙЕ ЦВЕТЫ",
                     "НИКОЛА ПУССЕН РИНАЛЬДО И АРМИДА",},
             //endregion
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
+            //region agmv
+            {"ШКАТУЛКА",
+                    "КНИГА ЛОНТАР",
+                    "ТАШТЫКСКАЯ МАСКА",
+                    "МАСКА-ЛИЧИНА",
+                    "КРИШНА-ВИШНУ",
+                    "СТОПКА ДЛЯ КИСТЕЙ",
+                    "БОТХИСАТТВА ФУГЭН",
+                    "АСТРАЛЯБИЯ ПЛАНИСФЕРА",
+                    "ХРАМ МАХЕДРАНАТХА",
+                    "ВАДЖРА",},
+            //endregion
             //region arus
             {"ТАРХОВ МАМИНА КОМНАТА УТРОМ",
                     "КЛОДТ ЗАРОСШИЙ ПРУД",
@@ -227,10 +279,40 @@ public class Staff extends Application {
                     "РАБИН ПЕЙЗАЖ В ПРИЛУКАХ",
                     "КОРОВИН ЮЖНЫЙ ПЕЙЗАЖ",},
             //endregion
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
+            //region afer
+            {"ЧЕРНИЛЬНИЦА СО СЦЕНОЙ ЧАЕПИТИЯ",
+                    "ЦИТРИН",
+                    "ФЛЮОРИТ",
+                    "КВАРЦ",
+                    "БЕРИЛЛ",
+                    "АМЕТИСТ",
+                    "МОХОВОЙ АГАТ",
+                    "ЯНТАРЬ",
+                    "ТОПАЗ",
+                    "ПИРИТ",},
+            //endregion
+            //region adar
+            {"МОРЖ",
+                    "СКЕЛЕТ ОБЕЗЬЯНЫ",
+                    "ЛЕВ",
+                    "КРОЛИК ГОЛЛАНДСКИЙ ГЛАДКИЙ",
+                    "ВОЛК",
+                    "ПАЛЬМОВЫЙ ВОР",},
+            //endregion
+            //region apal
+            {"ДИПЛОДОК",
+                    "ЧЕРЕП БРОНТОТЕРИЯ",
+                    "СКЕЛЕТ МАКАКИ РЕЗУС",
+                    "СКЕЛЕТ БОЛЬШЕРОГОГО ОЛЕНЯ",
+                    "БОРИСЯКИЯ",
+                    "ИНДРИКОТЕРИЙ",},
+            //endregion
+            //region apla
+            {"МАЯТНИК ФУКО",
+                    "МАКЕТ СОЛНЕЧНОЙ СИСТЕМЫ",
+                    "ГЛОБУС ЗЕМЛИ",
+                    "ЗВЕЗДОЧЕТ",},
+            //endregion
             //region azoo
             {"ЛАМА",
                     "КАПИБАРА",

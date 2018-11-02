@@ -173,6 +173,7 @@ public class StaffActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 scoreNum=0;
+                staffLayout.setBackgroundColor(getResources().getColor(R.color.colorLightestOrange));
                 editor.putString("Score"+getPosition, "0");
                 editor.apply();
                 score.setText(sp.getString("Score"+getPosition,"0"));
