@@ -33,6 +33,7 @@ public class TheatreActivity extends AppCompatActivity {
 
         ImageView theatreImage = findViewById(R.id.theatre_image);
         theatreImage.setImageResource(theatresImages[getTheatrePosition]);
+        ((TextView)findViewById(R.id.theatre_description)).setText(theatresDesc[getTheatrePosition]);
         ((TextView)findViewById(R.id.theatre_websrc)).setText(theatresWeb[getTheatrePosition]);
         ((TextView)findViewById(R.id.theatre_address)).setText(theatresAddresses[getTheatrePosition]);
 

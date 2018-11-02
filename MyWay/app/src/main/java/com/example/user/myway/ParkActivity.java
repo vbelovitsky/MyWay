@@ -21,6 +21,7 @@ public class ParkActivity extends AppCompatActivity {
 
         ImageView parkImage = findViewById(R.id.park_image);
         parkImage.setImageResource(park.getParkImage());
+        ((TextView)findViewById(R.id.park_description)).setText(park.getParkDesc());
         ((TextView)findViewById(R.id.park_websrc)).setText(park.getParkWeb());
         ((TextView)findViewById(R.id.park_address)).setText(park.getParkAddress());
 

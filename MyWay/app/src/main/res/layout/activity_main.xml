@@ -24,7 +24,8 @@
             android:layout_height="match_parent"
             android:layout_weight="6"
             android:text="@string/title_of_app"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="18sp"
+            android:textColor="@color/colorBlack"
             android:gravity="center" />
         <TextView
             android:id="@+id/progress"

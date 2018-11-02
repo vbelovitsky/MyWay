@@ -88,6 +88,7 @@ public class Staff extends Application {
                     R.drawable.pus_u,
                     R.drawable.pus_v,},
             //endregion
+            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
             //region rus
             {R.drawable.rus_a,
                     R.drawable.rus_b,
@@ -106,9 +107,33 @@ public class Staff extends Application {
             {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
             {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
             {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl},
-            {R.drawable.crown, R.drawable.helmet, R.drawable.map, R.drawable.skull, R.drawable.sword, R.drawable.trophy, R.drawable.shield, R.drawable.picture, R.drawable.sabre, R.drawable.bowl}
+            //region zoo
+            {R.drawable.zoo_a,
+                    R.drawable.zoo_b,
+                    R.drawable.zoo_c,
+                    R.drawable.zoo_d,
+                    R.drawable.zoo_e,
+                    R.drawable.zoo_f,
+                    R.drawable.zoo_g,
+                    R.drawable.zoo_h,
+                    R.drawable.zoo_i,
+                    R.drawable.zoo_j,
+                    R.drawable.zoo_k,
+                    R.drawable.zoo_l,
+                    R.drawable.zoo_m,
+                    R.drawable.zoo_n,},
+            //endregion
+            //region nov
+            {R.drawable.nov_a,
+                    R.drawable.nov_b,
+                    R.drawable.nov_c,
+                    R.drawable.nov_d,
+                    R.drawable.nov_e,
+                    R.drawable.nov_f,
+                    R.drawable.nov_g,
+                    R.drawable.nov_h,
+                    R.drawable.nov_i,}
+            //endregion
     };
 
     private  String [][] answersArray = {
@@ -187,6 +212,7 @@ public class Staff extends Application {
                     "ЖАН-БАТИСТ МОННУАЙЕ ЦВЕТЫ",
                     "НИКОЛА ПУССЕН РИНАЛЬДО И АРМИДА",},
             //endregion
+            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
             //region arus
             {"ТАРХОВ МАМИНА КОМНАТА УТРОМ",
                     "КЛОДТ ЗАРОСШИЙ ПРУД",
@@ -205,9 +231,34 @@ public class Staff extends Application {
             {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
             {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
             {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"},
-            {"ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ","ТЕСТ"}
+            //region azoo
+            {"ЛАМА",
+                    "КАПИБАРА",
+                    "ВИКУНЬЯ",
+                    "ЧЕРНЫЙ ЛЕБЕДЬ",
+                    "КАЗУАР",
+                    "ОБЫКНОВЕННЫЙ ПАВЛИН",
+                    "БЕЛОПЛЕЧИЙ ОРЛАН",
+                    "БЕЛОГОЛОВЫЙ ОРЛАН",
+                    "ГЕПАРД",
+                    "ЕВРАЗИЙСКАЯ РЫСЬ",
+                    "ОВЦЕБЫК",
+                    "ШИЛОКЛЮВКА",
+                    "ДАМАН БРЮСА",
+                    "ЛОШАДЬ ПРЖЕВАЛЬСКОГО",},
+            //endregion
+            //region anov
+            {"КЛЮН ПРОБЕГАЮЩИЙ ПЕЙЗАЖ",
+                    "МАЛЕВИЧ ЧЕРНЫЙ СУПРЕМАТИЧЕСКИЙ КВАДРАТ",
+                    "КАНДИНСКИЙ КОМПОЗИЦИЯ VII",
+                    "ЛЕНТУЛОВ ЗВОН",
+                    "ПЕТРОВ-ВОДКИН КУПАНИЕ КРАСНОГО КОНЯ",
+                    "РЕДЬКО ВОССТАНИЕ",
+                    "ДЕЙНЕКА БУДУЩИЕ ЛЕТЧИКИ",
+                    "ЧЕЛИЩЕВ ФЕНОМЕН",
+                    "РОГИНСКИЙ КОММУНАЛЬНАЯ КУХНЯ",
+            }
+            //endregion
     };
 
     private int [] currentImages;
