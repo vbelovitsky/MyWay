@@ -20,6 +20,7 @@ public class StaffActivity extends AppCompatActivity{
     int positionOfStaff = 0;
     String rightAnswer = "";
     SharedPreferences sp;
+    int wrongAnswersCount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,8 +66,14 @@ public class StaffActivity extends AppCompatActivity{
                     }
                     else if (answer.equals(""))
                         Toast.makeText(getApplicationContext(), "Введите ответ", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(getApplicationContext(), "Неверный ответ", Toast.LENGTH_SHORT).show();
+                    else{
+                        wrongAnswersCount++;
+                        if (wrongAnswersCount<7)
+                            Toast.makeText(getApplicationContext(), "Неверный ответ", Toast.LENGTH_SHORT).show();
+                        else{
+                            editAnswer.setText(currentStaff.getAnswer(positionOfStaff));
+                            Toast.makeText(getApplicationContext(), "Подсказка", Toast.LENGTH_SHORT).show();}
+                        }
                 }
                 else
                     Toast.makeText(getApplicationContext(), "Уже отгадано", Toast.LENGTH_SHORT).show();
@@ -79,6 +86,7 @@ public class StaffActivity extends AppCompatActivity{
         previousStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                wrongAnswersCount = 0;
                 positionOfStaff--;
                 editAnswer.setText("");
                 if (positionOfStaff<0){
@@ -109,6 +117,7 @@ public class StaffActivity extends AppCompatActivity{
         newStaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                wrongAnswersCount = 0;
                 positionOfStaff++;
                 editAnswer.setText("");
                 if (positionOfStaff<currentStaff.getLength()){

@@ -33,6 +33,7 @@ public class RecommendActivity extends AppCompatActivity {
         foodDesc.setText(currentRecommend.getCafeDesc());
         //endregion
 
+        //region SetRecommendedParkInfo
         ImageView recoMapImage = findViewById(R.id.minimap);
         recoMapImage.setImageResource(currentRecommend.getMapImage());
         ImageView recoParkImage = findViewById(R.id.reco_park_image);
@@ -40,6 +41,7 @@ public class RecommendActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.reco_park_desc)).setText(currentpark.getParkDesc());
         ((TextView)findViewById(R.id.reco_park_web)).setText(currentpark.getParkWeb());
         ((TextView)findViewById(R.id.reco_park_address)).setText(currentpark.getParkAddress());
+        //endregion
 
         //region MoveToMainActivity
         final Button nextButton = findViewById(R.id.go_to_menu);
